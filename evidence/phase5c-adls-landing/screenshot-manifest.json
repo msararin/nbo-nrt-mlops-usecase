@@ -1,0 +1,61 @@
+{
+  "phase": "5C",
+  "captured_date": "2026-08-05",
+  "publication_boundary": "ADLS landing and byte-level read-back only; Databricks Bronze and model execution not started",
+  "images": [
+    {
+      "filename": "screenshots/01-adls-gen2-storage-created-redacted.png",
+      "evidence_purpose": "Show the dedicated ADLS Gen2 storage account configuration and security controls.",
+      "source_screenshot_identity": "/Users/apple/Downloads/NBO_NRT_COCKPIT_ADLS_EVIDENCE_UPDATE_2026-08-05/10_SOURCE_CAPTURES/01-adls-gen2-storage-created-original.png",
+      "source_sha256": "e86a8742541461149d9fdc14ecc15143e038e902053ed837137973569ae1cc56",
+      "publication_redaction_status": "REVIEWED_NO_REDACTION_REQUIRED",
+      "published_sha256": "e86a8742541461149d9fdc14ecc15143e038e902053ed837137973569ae1cc56",
+      "date_captured": "2026-08-05",
+      "phase": "5C",
+      "claim_supported": "A dedicated ADLS Gen2 account exists with hierarchical namespace and secure transfer enabled and anonymous blob access disabled.",
+      "sensitive_fields_redacted": [
+        "subscription ID excluded from source capture",
+        "tenant ID excluded from source capture",
+        "user identity and email excluded from source capture",
+        "credentials, keys, and SAS values not captured"
+      ],
+      "original_retained_locally": true
+    },
+    {
+      "filename": "screenshots/02-adls-cli-list-12-artifacts.png",
+      "evidence_purpose": "Show the 12 landed artifacts under the actual ADLS landing path.",
+      "source_screenshot_identity": "/Users/apple/Downloads/NBO_NRT_COCKPIT_ADLS_EVIDENCE_UPDATE_2026-08-05/10_SOURCE_CAPTURES/02-adls-cli-list-12-artifacts-original.png",
+      "source_sha256": "af884b9e1cc877a3074f6a9c2d99371ffba243e4cd977e6be3e5ae4055011eff",
+      "publication_redaction_status": "REVIEWED_NO_REDACTION_REQUIRED",
+      "published_sha256": "af884b9e1cc877a3074f6a9c2d99371ffba243e4cd977e6be3e5ae4055011eff",
+      "date_captured": "2026-08-05",
+      "phase": "5C",
+      "claim_supported": "The governed composite package contains 12 landed artifacts: 11 canonical CSV tables and one generation manifest.",
+      "sensitive_fields_redacted": [
+        "subscription ID excluded from source capture",
+        "tenant ID excluded from source capture",
+        "user identity and email excluded from source capture",
+        "credentials, keys, and SAS values not captured"
+      ],
+      "original_retained_locally": true
+    },
+    {
+      "filename": "screenshots/03-adls-hash-rowcount-final-pass.png",
+      "evidence_purpose": "Show the final downloaded-byte hash, manifest, artifact-count, and row-count verification.",
+      "source_screenshot_identity": "/Users/apple/Downloads/NBO_NRT_COCKPIT_ADLS_EVIDENCE_UPDATE_2026-08-05/10_SOURCE_CAPTURES/03-adls-hash-rowcount-final-pass-original.png",
+      "source_sha256": "1fc80e75c962f7191e3bc7da295aab51ce56250236cc030e80246acfa8545a15",
+      "publication_redaction_status": "REVIEWED_NO_REDACTION_REQUIRED",
+      "published_sha256": "1fc80e75c962f7191e3bc7da295aab51ce56250236cc030e80246acfa8545a15",
+      "date_captured": "2026-08-05",
+      "phase": "5C",
+      "claim_supported": "All 12 local-to-ADLS hashes match, the authoritative manifest hash matches, and 805 CSV rows were recomputed.",
+      "sensitive_fields_redacted": [
+        "subscription ID excluded from source capture",
+        "tenant ID excluded from source capture",
+        "user identity and email excluded from source capture",
+        "credentials, keys, and SAS values not captured"
+      ],
+      "original_retained_locally": true
+    }
+  ]
+}
