@@ -28,9 +28,13 @@ The proof includes:
 
 Publication copies were visually inspected for subscription IDs, tenant IDs, user emails, access keys, SAS tokens, credentials, private URLs, and unrelated personal information. None of those fields is present in the published captures, so no pixel-level redaction was required.
 
-Review status at repository creation: `CODEX_LOCAL_ROLE_LENS_ONLY`.
+External Independent Checker status: `PASS_WITH_NON_BLOCKING_OBSERVATIONS`.
 
-This status is not independent verification. Any later external review is packet-only unless its own attributable receipt states otherwise.
+- Provider/model: OpenRouter / `openai/gpt-5.6-terra`
+- Generation ID: `gen-1785865175-UVLHdP35R0sDQUXAtm09`
+- Trust level: packet-only
+
+The Checker reviewed the privacy-minimized diff and evidence packet. It did not directly observe the live repository, local files, Azure/ADLS execution, or rendered browser. This is not a claim of direct independent observation of those systems.
 
 ## Custody
 
