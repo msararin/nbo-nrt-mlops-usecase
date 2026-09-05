@@ -1,0 +1,29 @@
+{
+  "schema": "exp3-step2-integration-receipt.v1",
+  "experiment_id": "EXP3",
+  "current_gate": "B1",
+  "contract_id": "EXP3_CONTRACT:v1",
+  "recipe_id": "EXP3_RECIPE_TRAIN_V2:v1",
+  "source_commit": "82a0f46148594d990a325a206ce6026c98504a0c",
+  "source_table": "adb_nbo_nrt_mlops_dev.simulation.bandit_logged_interactions_v0_2",
+  "authorized_split": "TRAIN",
+  "databricks_profile": "nbo-nrt-dev",
+  "workspace_id": "7405606839222888",
+  "job_run_id": 289733114567399,
+  "task_run_id": 177556032106721,
+  "task_key": "validate_train_v2_recovery",
+  "execution_projection_sha256": "c078ae9201fbae5b31de292882b59ec9329a1a314571486722a276fdf03143e0",
+  "result_state": "SUCCESS",
+  "train_v2_recovered": 8002,
+  "interaction_columns": [
+    "segment_action",
+    "event_action",
+    "channel_action"
+  ],
+  "test_accessed": "NO",
+  "model_training": "NO",
+  "policy_training": "NO",
+  "greedy_policy_construction": "NO",
+  "step2_integration": "PASS",
+  "claim_boundary": "TRAIN-only durable recovery validation; no TEST, training, policy construction, B1 localization, production, or uplift claim"
+}
