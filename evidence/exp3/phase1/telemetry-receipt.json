@@ -1,0 +1,79 @@
+{
+  "artifact_type": "AIOS_ROUTE_TELEMETRY_RECEIPT",
+  "experiment_id": "EXP3",
+  "phase": "PHASE1",
+  "canonical_repository": "git@github.com:msararin/nbo-nrt-mlops-usecase.git",
+  "accepted_source_commit": "83cd2b8d95b08bc9cdc31a35f29eaaa1036c393b",
+  "external_roles": [
+    {
+      "role": "Independent Checker",
+      "provider": "openrouter",
+      "requested_model": "anthropic/claude-sonnet-4.5",
+      "returned_model": "anthropic/claude-sonnet-4.5",
+      "generation_id": "gen-1788626492-z1hZPfVhHSVRLPOTalLI",
+      "confirmed_delivery": true,
+      "request_sha256": "a3fa4f5d4b72437d2764590f4e14e04ac7e1f46af4c84900ecdd10ab8bc49e20",
+      "provider_payload_sha256": "8d6f99b223bce0344a749138e330bc69893df76cbe446e7061b1f7569acf06c1",
+      "raw_response_sha256": "f9bd2294b64cb37802b5671b1158a038f3ea797c9a5c79afe9044678ec194ef8",
+      "substantive_response_sha256": "cb3d55a52352ba2085adc3f218fbb4ce6299000a120d64b690d6f750bf0085dc",
+      "input_tokens": 1584,
+      "output_tokens": 1763,
+      "total_tokens": 3347,
+      "cost_usd": 0.031197,
+      "latency_ms": 34487,
+      "retries_before_confirmed_delivery": 2,
+      "failures": [
+        "attempt 1: local host invocation ended near 30 seconds before receipt creation; ROLE_NOT_ENGAGED",
+        "attempt 2: local host invocation ended near 30 seconds before receipt creation; ROLE_NOT_ENGAGED"
+      ],
+      "verdict": "CHECK_PASS_WITH_LIMITATIONS",
+      "limitations": "Evidence packet only; no direct repository, Databricks, table, runtime, or run-log observation."
+    },
+    {
+      "role": "Prime Gate",
+      "provider": "openrouter",
+      "requested_model": "anthropic/claude-opus-4.7",
+      "returned_model": "anthropic/claude-opus-4.7",
+      "generation_id": "gen-1788626597-FDhdt7ENC8R06JfOC3Vs",
+      "confirmed_delivery": true,
+      "request_sha256": "bf6b15c9a6d111ced8cad9a9d5eefd9b4b53bd8f40ab25a63df4ee80132e34a9",
+      "provider_payload_sha256": "16d156df162c5aba251efe06c602663f868306462d8cf898b8121f1b1127bc1e",
+      "raw_response_sha256": "47f9cc962713401cceadb2b9dc7581fafa47f97de6a149ece4c8451ff281e097",
+      "substantive_response_sha256": "b264633a22a14ba0c018f13b67eeed7225ec580cea2e632e47ef0eb607574bdf",
+      "input_tokens": 1809,
+      "output_tokens": 2402,
+      "total_tokens": 4211,
+      "cost_usd": 0.069095,
+      "latency_ms": 35794,
+      "retries_before_confirmed_delivery": 0,
+      "failures": [],
+      "verdict": "PHASE1_ACCEPT_WITH_LIMITATIONS",
+      "limitations": "Evidence packet only; no direct repository, Databricks, table, runtime, or run-log observation."
+    }
+  ],
+  "local_execution": {
+    "tests": {
+      "command": "python3 -m unittest discover -s tests/unit/exp3 -p 'test_*.py' -v",
+      "passed": 18,
+      "failed": 0
+    },
+    "tool_failures": [
+      "bare pytest executable not present",
+      "Homebrew Python did not have pytest installed"
+    ],
+    "databricks_runs": [
+      {"purpose": "Step 2 TRAIN recovery", "parent_run_id": 289733114567399, "task_run_id": 177556032106721, "result": "SUCCESS"},
+      {"purpose": "Step 3 initial checkpoint write", "parent_run_id": 297297513664857, "result": "FAILED", "error": "SQLSTATE 42601", "task_attempts": 2},
+      {"purpose": "Step 3 preflight", "parent_run_id": 720509405272144, "task_run_id": 684143539925273, "result": "SUCCESS"},
+      {"purpose": "Step 3 corrected checkpoint write", "parent_run_id": 55815994375489, "task_run_id": 714131884460416, "result": "SUCCESS", "attempt": 0},
+      {"purpose": "Step 3 separate checkpoint read", "parent_run_id": 119633299689444, "task_run_id": 478906069429943, "result": "SUCCESS"},
+      {"purpose": "Step 4 resume and drift validation", "parent_run_id": 125226956123826, "task_run_id": 1075465073264233, "result": "SUCCESS", "attempt": 0}
+    ]
+  },
+  "historical_role_failure": {
+    "role": "Prime Gate RCA",
+    "classification": "ROLE_NOT_ENGAGED",
+    "reason": "Initial helper response lacked confirmed generation ID and complete telemetry; response was excluded and not relabelled."
+  },
+  "claim_ceiling": "Phase 1 pause/resume control-plane durability and reproducibility only; B1 remains open and no TEST, training, policy, lineage, deployment, production, or uplift claim is established."
+}
