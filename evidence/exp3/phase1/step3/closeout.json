@@ -1,0 +1,65 @@
+{
+  "schema": "exp3-phase1-step3-closeout.v1",
+  "experiment_id": "EXP3",
+  "gate_id": "B1",
+  "checkpoint_id": "EXP3-B1-PAUSED-SAFE-001",
+  "checkpoint_table": "adb_nbo_nrt_mlops_dev.experiment_control.experiment_checkpoints",
+  "candidate_commit": "40e51370401ee8990c935adb07029698e12b21a9",
+  "initial_write": {
+    "parent_run_id": 297297513664857,
+    "attempt_run_ids": [994342206050083, 1071823427695582],
+    "result": "FAILED",
+    "error": "PARSE_SYNTAX_ERROR SQLSTATE 42601 at UPDATE SET wildcard plus assignment"
+  },
+  "prime_gate": {
+    "provider": "openrouter",
+    "requested_model": "anthropic/claude-opus-4.7",
+    "returned_model": "anthropic/claude-opus-4.7",
+    "generation_id": "gen-1788625537-xCk9KhqzvsAEAINXZSp1",
+    "total_tokens": 3842,
+    "cost_usd": 0.07293,
+    "latency_ms": 43699,
+    "decision": "CONDITIONAL_SINGLE_RETRY"
+  },
+  "preflight": {
+    "parent_run_id": 720509405272144,
+    "task_run_id": 684143539925273,
+    "table_exists": true,
+    "schema_match": true,
+    "checkpoint_count": 0,
+    "result": "PASS"
+  },
+  "independent_checker": {
+    "provider": "openrouter",
+    "requested_model": "anthropic/claude-sonnet-4.5",
+    "returned_model": "anthropic/claude-sonnet-4.5",
+    "generation_id": "gen-1788625710-j7caVWIaHXGBVjoL8V65",
+    "total_tokens": 1550,
+    "cost_usd": 0.015306,
+    "latency_ms": 20637,
+    "decision": "RETRY_ELIGIBLE_WITH_CONSTRAINTS"
+  },
+  "bounded_retry": {
+    "parent_run_id": 55815994375489,
+    "task_run_id": 714131884460416,
+    "attempt_number": 0,
+    "result": "SUCCESS"
+  },
+  "independent_read": {
+    "parent_run_id": 119633299689444,
+    "task_run_id": 478906069429943,
+    "checkpoint_count": 1,
+    "checkpoint_status": "PAUSED_SAFE",
+    "current_gate": "B1",
+    "current_gate_status": "ACTIVE",
+    "recovery_recipe_id": "EXP3_RECIPE_TRAIN_V2:v1",
+    "thin_support_rule": "NOT_DURABLY_PRESERVED",
+    "result": "PASS"
+  },
+  "test_accessed": "NO",
+  "model_training": "NO",
+  "policy_training": "NO",
+  "greedy_policy_construction": "NO",
+  "step3_status": "PASS_CLOSED",
+  "claim_boundary": "Durable checkpoint persistence and independent read only; B1 remains active and not closed."
+}
