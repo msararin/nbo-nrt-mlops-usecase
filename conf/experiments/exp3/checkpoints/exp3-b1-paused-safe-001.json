@@ -1,0 +1,67 @@
+{
+  "checkpoint_schema": "EXP3_CHECKPOINT_MANIFEST_SCHEMA:v1",
+  "checkpoint_id": "EXP3-B1-PAUSED-SAFE-001",
+  "previous_checkpoint_id": null,
+  "checkpoint_status": "PAUSED_SAFE",
+  "experiment_id": "EXP3",
+  "contract_id": "EXP3_CONTRACT:v1",
+  "current_gate": "B1",
+  "current_gate_status": "ACTIVE",
+  "last_completed_step": "B1 candidate universe reconstruction",
+  "verified_results": {
+    "train_rows": 8002,
+    "distinct_train_context_states": 7660,
+    "distinct_actions": 5,
+    "candidate_rows": 38300,
+    "test_accessed": "NO"
+  },
+  "reconciliation": {
+    "expression": "7660 * 5 = 38300",
+    "status": "PASS"
+  },
+  "durable_evidence": [
+    "Reward Model V2 MLflow artifact",
+    "V2 durable recovery handoff",
+    "B1 overall support counts",
+    "EXP3 Step 2 Databricks integration receipt"
+  ],
+  "durable_state": [
+    "Unity Catalog source",
+    "MLflow model artifact",
+    "experiment contract",
+    "checkpoint manifest",
+    "recovery recipe",
+    "evidence artifacts"
+  ],
+  "ephemeral_state": [
+    "train_v2",
+    "train_contexts",
+    "train_actions",
+    "Spark DataFrames",
+    "Python variables",
+    "display outputs"
+  ],
+  "ephemeral_loss_interpretation": "NOT_A_MODEL_FAILURE_RECONSTRUCT_FROM_DURABLE_RECIPE",
+  "recovery_recipe_id": "EXP3_RECIPE_TRAIN_V2:v1",
+  "known_open_issues": {
+    "B1_SUPPORT_RULE.thin_support_rule": "NOT_DURABLY_PRESERVED"
+  },
+  "must_not_repeat": [
+    "Reward Model V2 recovery investigation",
+    "Reward Model V1 versus V2 capacity comparison"
+  ],
+  "prohibitions": [
+    "TEST_ACCESS",
+    "MODEL_TRAINING",
+    "POLICY_TRAINING",
+    "GREEDY_CANDIDATE_POLICY_CONSTRUCTION",
+    "PRODUCTION_UPLIFT_CLAIMS"
+  ],
+  "source_table": "adb_nbo_nrt_mlops_dev.simulation.bandit_logged_interactions_v0_2",
+  "source_table_version": "NOT_CAPTURED",
+  "model_run_id": "59d42a1878b04dde967d816993e92fb0",
+  "artifact_uri": "runs:/59d42a1878b04dde967d816993e92fb0/reward_model_v2",
+  "code_version_or_hash": "15bfd7d61cd71c9c01e3ee8e8c8cf345bad67570",
+  "execution_run_id": "NOT_CAPTURED_FOR_B1_CANDIDATE_UNIVERSE_RECONSTRUCTION",
+  "next_authorized_step": "B1 empirical support reconstruction and establishment of the exact versioned support classification contract."
+}
