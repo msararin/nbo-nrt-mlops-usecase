@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "EXP3_TRACE_ENVELOPE_SCHEMA:v1",
+  "type": "object",
+  "required": ["experiment_id", "current_gate", "checkpoint_id", "contract_id", "recovery_recipe_id", "source_table", "source_table_version", "model_run_id", "artifact_uri", "code_version_or_hash", "execution_run_id", "observed", "expected", "resume_state", "test_accessed", "model_training", "policy_training", "next_authorized_step"]
+}
