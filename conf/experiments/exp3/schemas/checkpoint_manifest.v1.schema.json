@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "EXP3_CHECKPOINT_MANIFEST_SCHEMA:v1",
+  "type": "object",
+  "required": [
+    "checkpoint_id", "checkpoint_status", "experiment_id", "current_gate",
+    "current_gate_status", "last_completed_step", "verified_results",
+    "reconciliation", "known_open_issues", "durable_state", "ephemeral_state",
+    "recovery_recipe_id", "must_not_repeat", "prohibitions", "next_authorized_step"
+  ],
+  "properties": {
+    "checkpoint_status": {"const": "PAUSED_SAFE"},
+    "experiment_id": {"const": "EXP3"},
+    "current_gate": {"const": "B1"},
+    "current_gate_status": {"const": "ACTIVE"},
+    "recovery_recipe_id": {"const": "EXP3_RECIPE_TRAIN_V2:v1"}
+  }
+}

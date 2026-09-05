@@ -1,0 +1,41 @@
+{
+  "artifact_type": "EXP3_PHASE1_STEP4_INTEGRATION_RECEIPT",
+  "captured_at_timezone": "Asia/Bangkok",
+  "code_version_or_hash": "98e7c93f1c591c238be6fb8cccaf9d432fc53208",
+  "databricks": {
+    "attempt_number": 0,
+    "job_id": 222169924190001,
+    "parent_run_id": 125226956123826,
+    "profile": "nbo-nrt-dev",
+    "result_state": "SUCCESS",
+    "task_run_id": 1075465073264233
+  },
+  "experiment_id": "EXP3",
+  "gate": "B1",
+  "negative_drift_test": {
+    "expected_candidate_rows": 38301,
+    "mismatch_observed_candidate_rows": 38300,
+    "resume_state": "DRIFT_DETECTED"
+  },
+  "observed": {
+    "candidate_rows": 38300,
+    "distinct_actions": 5,
+    "distinct_train_context_states": 7660,
+    "train_rows": 8002
+  },
+  "prohibitions_observed": {
+    "greedy_policy_construction": "NO",
+    "model_training": "NO",
+    "policy_training": "NO",
+    "test_accessed": "NO"
+  },
+  "resume_state": "VALID",
+  "source_table_version": "NOT_CAPTURED",
+  "status": "PASS",
+  "trace_schema": "EXP3_TRACE_ENVELOPE_SCHEMA:v1",
+  "limitations": [
+    "This receipt proves the bounded Step 4 resume-validation run only.",
+    "It does not close B1 or establish the historical THIN_SUPPORT rule.",
+    "It does not authorize TEST access, model training, policy training, policy construction, promotion, or production claims."
+  ]
+}

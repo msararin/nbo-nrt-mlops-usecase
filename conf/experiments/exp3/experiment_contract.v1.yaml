@@ -1,0 +1,50 @@
+{
+  "contract_id": "EXP3_CONTRACT:v1",
+  "contract_version": 1,
+  "experiment_id": "EXP3",
+  "experiment_name": "NBO-NRT Experiment 3 - constrained policy learning preparation",
+  "scientific_formulation": "Constrained contextual-bandit policy learning preparation using supervised Reward Model V2; current work is support reconstruction and localization only.",
+  "current_gate": "B1",
+  "data_boundary": {
+    "authorized_split": "TRAIN",
+    "test_access": "PROHIBITED",
+    "durable_train_source": "adb_nbo_nrt_mlops_dev.simulation.bandit_logged_interactions_v0_2"
+  },
+  "context_definition": [
+    "segment_code",
+    "event_type",
+    "decision_channel",
+    "contact_channel_history_count",
+    "rank1_rank2_score_gap"
+  ],
+  "action_definition": {
+    "column": "chosen_action",
+    "allowed_actions": ["BUNDLE", "DATA", "LOYALTY", "ROAMING", "VOICE"]
+  },
+  "reward_model_v2": {
+    "recovery_status": "CLOSED_PASS",
+    "run_id": "59d42a1878b04dde967d816993e92fb0",
+    "run_name": "exp3_reward_model_v2_interaction",
+    "artifact_uri": "runs:/59d42a1878b04dde967d816993e92fb0/reward_model_v2",
+    "model_flavor": "Spark PipelineModel"
+  },
+  "interaction_feature_contract": {
+    "separator": "::",
+    "ordering": "context_then_action",
+    "features": {
+      "segment_action": ["segment_code", "chosen_action"],
+      "event_action": ["event_type", "chosen_action"],
+      "channel_action": ["decision_channel", "chosen_action"]
+    }
+  },
+  "prohibitions": [
+    "TEST_ACCESS",
+    "MODEL_TRAINING",
+    "POLICY_TRAINING",
+    "GREEDY_CANDIDATE_POLICY_CONSTRUCTION",
+    "PRODUCTION_UPLIFT_CLAIMS"
+  ],
+  "unresolved_contract_fields": {
+    "B1_SUPPORT_RULE.thin_support_rule": "NOT_DURABLY_PRESERVED"
+  }
+}
